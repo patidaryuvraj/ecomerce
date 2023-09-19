@@ -1,0 +1,77 @@
+{% extends 'shop/basic.html' %}
+{% block title %} Your bill-- E-comShop{% endblock %}
+
+{% block body %}
+
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  	<div class="jumbotron">
+	    <div class="container">
+	      <h1 class="display-3">E-comShop -- Invoive</h1>
+	      <p>Your orders are display in format example: - <b>{"product_id":[quantity,"Product name",price]} = {"pr00":[0, "xyz", 0000]}</b>. </p>      
+	    </div>
+  	</div>
+
+
+  	<div class="container">
+	    <!-- Example row of columns -->
+	    <div class="row">
+	      <div class="col-md-8">
+	      </div>
+	      <div class="col-md-4">
+	        <h5>Customer Details</h5>
+	        <h6>Name: {{order.name}}</h6>
+	        <h6>Mobile: {{order.phone}}</h6>
+	        <h6>Email: {{order.email}}</h6>
+	        <h6>Address: {{order.address}}, {{order.city}}, {{order.zip_code}}, {{order.state}}.</h6>  
+	      </div>  
+	    </div>
+		<hr><hr>
+  	</div> <!-- /container -->
+
+
+  	<div class="container">
+	    <!-- Example row of columns -->
+	    <div class="col align center">
+	    	<div class="col-md-8">
+	        <h2>Order Details:</h2>
+	        <h6>Order Id: {{order.order_id}}</h6>
+	        <h6>Your Orders:{{order.items_json}}</h6>
+	        <div class="alert alert-dark" role="alert">
+  				The Total price your Order is <b>{{order.amount}}/-</b> Pyment method Cash On Delivery.
+			</div>
+	    </div>
+	    </div>
+		<hr><hr>
+  	</div> <!-- /container -->
+
+  	<div class="container">
+	    <!-- Example row of columns -->
+	    <div class="row">
+ 	     	<div class="col-md-8">
+	      	</div>
+	      	<div class="col-md-4">
+		        <h5>Company Details</h5>
+		        <h6>Name: E-comShop Pvt. Ltd.</h6>
+		        <h6>Mobile: +919482651598 </h6>
+		        <h6>Email: ecomshop2023@gmail.com</h6>
+		        <h6>Address: 0235,Sudama Nagar ,Annpurna Road, Indore, 456875</h6> 
+	      	</div>  
+	    </div>
+		<hr>
+  	</div> <!-- /container -->
+
+  	<div class="jumbotron">
+	    <div class="container">
+	      <h4 class="display-4">Thank You For Shopping With E-comShop.</h4>
+	      <p></b>. </p>      
+	    </div>
+  	</div>
+
+</main>
+<a href="/shop"><button class="btn btn-primary btn-lg" type="submit" onclick="window.print()">Print &raquo;</button></a>
+
+{% endblock %}
+{% block js %}
+{% endblock %}
